@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  mockdataservice:
+    build:
+      context: ../MockDataService
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+
+  mainspringbootapp:
+    build:
+      context: .
+    ports:
+      - "8081:8081"
+    networks:
+      - app-network
+    depends_on:
+      - mockdataservice
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      MONGO_URI: mongodb+srv://vashalomidzekonstantine:QuC5BLoX59mn137U@cluster0.tvzxq.mongodb.net
+
+  react-frontend:
+    build:
+      context: ../financial-instruments-platform
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    depends_on:
+      - mainspringbootapp
+
+networks:
+  app-network:
+    driver: bridge
