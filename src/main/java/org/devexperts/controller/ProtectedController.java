@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://financial-instruments-platform-frontend.onrender.com/")
 public class ProtectedController {
     @Autowired
     private MessageService messageService;

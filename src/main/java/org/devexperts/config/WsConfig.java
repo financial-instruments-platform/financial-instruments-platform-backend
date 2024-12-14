@@ -39,7 +39,7 @@ public class WsConfig implements WebSocketConfigurer {
                         "/ws/chat"
                 )
                 .addInterceptors(jwtWebSocketInterceptor)
-                .setAllowedOrigins("http://localhost:3000");
+                .setAllowedOrigins("https://financial-instruments-platform-frontend.onrender.com/");
 
 
         registry.addHandler(
@@ -47,13 +47,13 @@ public class WsConfig implements WebSocketConfigurer {
                         "/ws/subscribe"
                 )
                 .addInterceptors(jwtWebSocketInterceptor)
-                .setAllowedOrigins("http://localhost:3000");
+                .setAllowedOrigins("https://financial-instruments-platform-frontend.onrender.com/");
 
         registry.addHandler(
                         new RealtimeDataWebSocketHandler(instrumentDataService),
                         "/ws/realtime"
                 )
                 .addInterceptors(jwtWebSocketInterceptor)
-                .setAllowedOrigins("http://localhost:3000");
+                .setAllowedOrigins("https://financial-instruments-platform-frontend.onrender.com/");
     }
 }

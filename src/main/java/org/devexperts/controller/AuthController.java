@@ -12,10 +12,7 @@ import org.devexperts.service.UserService;
 import org.devexperts.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Base64;
@@ -28,6 +25,7 @@ import java.util.Base64;
  */
 @RestController
 @RequestMapping("/api/auth")
+@CrossOrigin(origins = "https://financial-instruments-platform-frontend.onrender.com/")
 public class AuthController {
 
     @Autowired
