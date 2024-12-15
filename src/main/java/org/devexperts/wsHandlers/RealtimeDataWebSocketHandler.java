@@ -6,7 +6,6 @@ import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
-@Component
 public class RealtimeDataWebSocketHandler extends TextWebSocketHandler {
 
     private final InstrumentDataService instrumentDataService;
