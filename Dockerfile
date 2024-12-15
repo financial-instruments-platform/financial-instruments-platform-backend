@@ -9,6 +9,6 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17-slim
 WORKDIR /app
 COPY --from=build /app/target/MainSpringBootApp-1.0-SNAPSHOT.jar app.jar
-EXPOSE 8081
+EXPOSE 10003
 
 CMD ["java", "-jar", "app.jar"]
